@@ -12,3 +12,11 @@ jobs:
     requires: [~commit]
     steps:
       - build: echo "build"
+  component2:
+    requires: [~commit, ~component]
+    steps:
+      - build: echo "build"
+  component3:
+    requires: [~commit, ~component2]
+    steps:
+      - build: echo "build"
