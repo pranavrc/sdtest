@@ -4,19 +4,11 @@ shared:
     image: node:6
 
 jobs:
-    main:
-        environment:
-            SD_ZIP_ARTIFACTS: true
-        steps:
-            - echo: echo "foo"
-        requires: [~pr,~commit]
-    main2:
-        environment:
-            SD_ZIP_ARTIFACTS: false
-        steps:
-            - echo: echo "foo"
-        requires: [~pr,~commit]
-    main3:
-        steps:
-            - echo: echo "foo"
-        requires: [~pr,~commit]
+  pull-request:
+    requires: [~pr]
+    steps:
+      - build: echo "skip build"
+  component:
+    requires: [~commit]
+    steps:
+      - build: echo "build"
