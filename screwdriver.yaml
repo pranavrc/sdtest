@@ -21,5 +21,6 @@ jobs:
     steps:
       - build: echo "build"
   component4:
+    freezeWindows: ['0-30 10-11 * * *']
     steps:
       - build: echo "build"
