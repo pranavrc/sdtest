@@ -9,19 +9,22 @@ jobs:
     steps:
       - build: echo "skip build"
   component:
+    freezeWindows: ['0-21 0-2 ? * *']
     requires: [~commit]
     steps:
       - build: echo "build"
   component2:
+    freezeWindows: ['0-20 0-2 ? * *']
     requires: [~commit, ~component]
     steps:
       - build: echo "build"
   component3:
+    freezeWindows: ['0-19 0-2 ? * *']
     requires: [~commit, ~component2]
     steps:
       - build: echo "build"
   component4:
     requires: [~commit]
-    freezeWindows: ['0-13 0-2 ? * *']
+    freezeWindows: ['0-18 0-2 ? * *']
     steps:
       - build: echo "build"
