@@ -14,12 +14,12 @@ jobs:
     steps:
       - build: echo "build"
   component2:
-    freezeWindows: ['* 0-2 ? * *']
+    freezeWindows: ['* * ? 15 *']
     requires: [~commit, ~component]
     steps:
       - build: echo "build"
   component3:
-    freezeWindows: ['* 0-2 ? 2 *']
+    freezeWindows: ['* * ? 2 *']
     requires: [~commit, ~component2]
     steps:
       - build: echo "build"
