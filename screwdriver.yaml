@@ -25,6 +25,6 @@ jobs:
       - build: echo "build"
   component4:
     requires: [~commit]
-    freezeWindows: ['0-59 0-52 15 * ?']
+    freezeWindows: ['0-59 0-2 15 * ?']
     steps:
       - build: echo "build"
