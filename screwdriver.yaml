@@ -15,7 +15,7 @@ jobs:
     steps:
       - build: echo "build"
   test:
-    freezeWindows: ['* 22-23,0-5 * * ?']
+    freezeWindows: ['* 23,0-5 * * ?']
     requires: [component]
     steps:
       - build: echo "build"
