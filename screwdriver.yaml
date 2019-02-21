@@ -9,6 +9,8 @@ jobs:
     steps:
       - build: echo "skip build"
   component:
+    annotations:
+        screwdriver.cd/buildPeriodically: H(58-58) * * * *
     freezeWindows: ['0-50 22-23 18 * ?']
     requires: [~commit]
     steps:
