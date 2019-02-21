@@ -21,7 +21,7 @@ jobs:
       - build: echo "build"
   deploy:
     freezeWindows: ['* * ? 2 *']
-    requires: [component2]
+    requires: [test]
     steps:
       - build: echo "build"
   auxiliary:
