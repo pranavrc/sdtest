@@ -1,31 +1,9 @@
 version: 4
 
-shared:
-    image: node:6
-
 jobs:
-  pull-request:
-    requires: [~pr]
-    steps:
-      - build: echo "skip build"
-  component:
-    annotations:
-        screwdriver.cd/buildPeriodically: H(25-25) * * * *
-    requires: [~commit]
-    steps:
-      - build: echo "build"
-  test:
-    freezeWindows: ['* 23,0-5 * * ?']
-    requires: [component]
-    steps:
-      - build: echo "build"
-  deploy:
-    freezeWindows: ['* * ? 2 *']
-    requires: [test]
-    steps:
-      - build: echo "build"
-  auxiliary:
-    requires: [~commit]
-    freezeWindows: ['* * ? * 4']
-    steps:
-      - build: echo "build"
+    main:
+        image: node:6
+        requires: [~pr, ~commit]
+        sourcePaths: ["src/app/", "screwdriver.yaml"]
+        steps:
+            - echo: echo hi
