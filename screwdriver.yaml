@@ -4,6 +4,6 @@ jobs:
     main:
         image: node:6
         requires: [~pr, ~commit]
-        sourcePaths: ["src/app/", "screwdriver.yaml"]
+        sourcePaths: ["src/app2/", "screwdriver.yaml"]
         steps:
             - echo: echo hi
